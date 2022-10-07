@@ -1,15 +1,9 @@
-import { FIRST_NAME, LAST_NAME } from "./types"
+import { BIO_DATA } from "./types"
 
-export const firstNameAction = (param) => {
+export const BioDataAction = (param) => {
     return {
-        type: FIRST_NAME,
+        type: BIO_DATA,
         payload: param
     }
 }
 
-export const lastNameAction = (param) => {
-    return {
-        type: LAST_NAME,
-        payload: param
-    }
-}

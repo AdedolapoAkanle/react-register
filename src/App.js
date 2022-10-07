@@ -1,30 +1,31 @@
 import { connect } from "react-redux";
-import { firstNameAction, lastNameAction } from "./actions";
+import { BioDataAction } from "./actions";
 
-const App = ({firstName, lastName, dispatchFirstName, dispatchLastName}) => {
+const App = ({state, dispatchBioData}) => {
+// console.log(bioData)
 
+  const {firstName, lastName, age, address, gender} = state;
 
   const clearState = () => {
-    dispatchFirstName("");
-    dispatchLastName("");
+    dispatchBioData("");
+    
   }
 
   return (
     <div className="App">
      <div className="container">
-      
      <form action="" className="form" >
-      <h2 className="header">Register</h2>
+      <h1 className="header">Registration</h1>
      <label htmlFor="first-name" className="label">FirstName: {firstName}</label>
-     <input type="text"  className="field" onChange={(e) => dispatchFirstName(e.target.value)} />
+     <input type="text"  className="field" onChange={(e) => dispatchBioData({...state, firstName: e.target.value})} />
      <label htmlFor="last-name" className="label">LastName: {lastName}</label>
-     <input type="text" className="field" onChange={(e) => dispatchLastName(e.target.value)}/>
-     <label htmlFor="Address" className="label">Address:</label>
-     <input type="text" className="field"/>
-     <label htmlFor="Age" className="label">Age:</label>
-     <input type="text" className="field" />
-     <label htmlFor="gender" className="label">Gender:</label>
-     <select className="dropdown">
+     <input type="text" className="field" onChange={(e) => dispatchBioData({...state, lastName: e.target.value})}/>
+     <label htmlFor="Address" className="label">Address: {address}</label>
+     <input type="text" className="field" onChange={(e) => dispatchBioData({...state, address: e.target.value})}/>
+     <label htmlFor="Age" className="label">Age:{age}</label>
+     <input type="text" className="field" onChange={(e) => dispatchBioData({...state, age: e.target.value})}/>
+     <label htmlFor="gender" className="label">Gender:{gender}</label>
+     <select className="dropdown" onChange={(e) => dispatchBioData({...state, gender: e.target.value})}>
      <option value="male" className="value">Male</option>
      <option value="female" className="value">Female</option>
      </select>
@@ -39,15 +40,14 @@ const App = ({firstName, lastName, dispatchFirstName, dispatchLastName}) => {
 // gives access to default values in states
 
 const mapStateToProps = ({ form }) => ({
-  firstName: form.firstName,
-  lastName: form.lastName
+  state: form.bioDataState,
 });
 
 // gives access to be able to update states
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchFirstName: (params) => dispatch(firstNameAction(params)),
-  dispatchLastName: (params) => dispatch(lastNameAction(params)),
+  dispatchBioData: (params) => dispatch(BioDataAction(params)),
+  
 })
 
 // connect helps to link the app component or file to the state

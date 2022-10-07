@@ -1,6 +1,8 @@
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
+    
 }
 * {
     font-family: monospace;
@@ -12,51 +14,53 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #efecea;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+
 }
 
 .form {
     display: flex;
     flex-direction: column;
     width: 25%;
-    background-color: #fcfcfc;
+    background-color: #efecea;
     padding: 25px;
-	box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
-    border: 2px solid #eee;
-    border-radius: 2px;
+    border: 2px solid #f7f7f7;
+    border-radius: 4px;
 
 }
 
 .header {
     font-size: 30px;
     text-align: center;
-    color: #50595c;
+    color: #34374c;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .field {
-    padding: 7px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin:10px 0;
     border: none;
-    border-bottom: 1px solid #50717b;
+    border-radius: 5px;
     font-size: 16px;
-    background-color: #fcfcfc;
+    background-color: lightgray;
     color: #233142;
 }
 
 .field:focus{
     outline: none;
-    border-bottom: 2px solid #50717b;
 }
 
 .dropdown {
-    width: 22%;
+    padding: 10px;
     margin-top: 20px;
-    border: none;
-    border-bottom: 1px solid #50717b;
-    background-color: #fcfcfc;
+    border-radius: 5px;
+    background-color: lightgray;
     font-size: 16px;
     cursor: pointer;
     color: #233142;
+    border: none;
 
 }
 
@@ -67,18 +71,17 @@ body {
 }
 
 .button {
-    width: 20%;
-    padding: 5px;
+    width: 25%;
+    padding: 10px;
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 18px;
     cursor: pointer;
-    background-color: #2a363b;
-    /* background-color: #50595c; */
+    background-color: #005792;
     color: #fcfcfc;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .button:hover {
-    background-color: #50595c;
+    background-color: #29668b;
 }
