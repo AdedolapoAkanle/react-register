@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { BioDataAction } from "./actions";
+import { getApi } from "./rest/api";
 
 const App = ({state, dispatchBioData}) => {
 // console.log(bioData)
@@ -7,6 +8,7 @@ const App = ({state, dispatchBioData}) => {
   const {firstName, lastName, age, address, gender} = state;
 
   const clearState = () => {
+    getApi("index.php");
     dispatchBioData("");
     
   }
