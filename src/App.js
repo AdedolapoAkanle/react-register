@@ -16,13 +16,17 @@ const App = ({state, dispatchBioData}) => {
   return (
     <div className="App">
      <div className="container">
-        {/* <div className="circle1"></div> */}
-        {/* <div className="circle2"></div> */}
-        {/* <div className="circle3"></div> */}
-        {/* <div className="circle4"></div> */}
+        <div className="circle1"></div>
+        <div className="circle2"></div>
+        <div className="circle3"></div>
+        <div className="circle4"></div>
         <div className="blur">
+          <div className="text">
+          <h1 className="text1">register now!</h1>
+          <span className="text2">Be a part of our community today.</span>
+          </div>
           <form action="" className="form" >
-            <h1 className="header">Registration</h1>
+            {/* <h1 className="header">Registration</h1> */}
             <label htmlFor="first-name" className="label">FirstName: {firstName}</label>
             <input type="text"  className="field" onChange={(e) => dispatchBioData({...state, firstName: e.target.value})} />
             
