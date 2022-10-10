@@ -99,7 +99,7 @@ body {
 
 .field:focus{
     outline: none;
-    border: 2px solid #005792;
+    border: 1px solid #005792;
 }
 
 .dropdown {
@@ -151,6 +151,6 @@ body {
 }
 .text2 {
     font-size: 30px;
-    color: #efecea;
+    color: #fff;
     letter-spacing: -2px;
 }

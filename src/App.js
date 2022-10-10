@@ -1,16 +1,23 @@
 import { connect } from "react-redux";
 import { BioDataAction } from "./actions";
-import { getApi } from "./rest/api";
+import { api } from "./api/api";
 
 const App = ({state, dispatchBioData}) => {
 // console.log(bioData)
 
   const {firstName, lastName, age, address, gender} = state;
 
-  const clearState = () => {
-    getApi("index.php");
-    dispatchBioData("");
-    
+  const clearState = async () => {
+    const data = {
+      firstName,
+      lastName,
+      age,
+      address,
+      gender
+    };
+    const res = await api("index.php", data);
+    console.log(res);
+    // dispatchBioData("");
   }
 
   return (
@@ -25,7 +32,7 @@ const App = ({state, dispatchBioData}) => {
           <h1 className="text1">register now!</h1>
           <span className="text2">Be a part of our community today.</span>
           </div>
-          <form action="" className="form" >
+          <div action="" className="form" >
             {/* <h1 className="header">Registration</h1> */}
             <label htmlFor="first-name" className="label">FirstName: {firstName}</label>
             <input type="text"  className="field" onChange={(e) => dispatchBioData({...state, firstName: e.target.value})} />
@@ -46,7 +53,7 @@ const App = ({state, dispatchBioData}) => {
             </select>
 
             <button className="button" onClick={clearState}>submit</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
