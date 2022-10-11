@@ -16,7 +16,7 @@ const App = ({state, dispatchBioData}) => {
       gender
     };
     const res = await api("index.php", data);
-    console.log(res);
+    alert(res);
     // dispatchBioData("");
   }
 
@@ -48,6 +48,7 @@ const App = ({state, dispatchBioData}) => {
             
             <label htmlFor="gender" className="label">Gender:{gender}</label>
             <select className="dropdown" onChange={(e) => dispatchBioData({...state, gender: e.target.value})}>
+            <option value="" hidden className="value">Select Gender</option>
               <option value="male" className="value">Male</option>
               <option value="female" className="value">Female</option>
             </select>
