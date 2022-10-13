@@ -15,7 +15,7 @@ const App = ({state, dispatchBioData}) => {
       address,
       gender
     };
-    const res = await api("index.php", data);
+    const res = await api("user.php", data);
     alert(res);
     // dispatchBioData("");
   }
