@@ -3,15 +3,19 @@ import { BioDataAction } from "./actions";
 import { api } from "./api/api";
 
 const App = ({ state, dispatchBioData }) => {
-  // console.log(bioData)
-
   const { firstName, lastName, address, age, gender } = state;
 
   const clearState = async () => {
-    const data = { firstName, lastName, address, age, gender };
-    // console.log(data);
-    const res = await api("index.php", {});
-    console.log("notice", res);
+    const data = {
+      firstName,
+      lastName,
+      address,
+      age,
+      gender,
+    };
+
+    const res = await api("index.php", data);
+    alert(res);
     // dispatchBioData("");
   };
 
