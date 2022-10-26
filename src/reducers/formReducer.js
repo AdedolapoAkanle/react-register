@@ -2,11 +2,14 @@ import { BIO_DATA } from "../actions/types";
 
 const INITIAL_STATE = {
   bioDataState: {
+    id: "",
     name: "",
     email: "",
     address: "",
     age: "",
     gender: "",
+    arr: [],
+    searchType: "",
   },
 };
 

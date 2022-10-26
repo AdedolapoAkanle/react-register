@@ -144,3 +144,13 @@ body {
   color: #fff;
   letter-spacing: -2px;
 }
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  margin-top: 20px;
+  font-size: 17px;
+}

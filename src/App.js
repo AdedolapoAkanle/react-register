@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Views/Home";
 import Menu from "./Views/Menu";
+import Update from "./Views/Update";
 
 const App = () => {
   return (
@@ -20,6 +21,14 @@ const App = () => {
           element={
             <div className="container">
               <Menu />
+            </div>
+          }
+        ></Route>
+        <Route
+          path="/update"
+          element={
+            <div className="container">
+              <Update />
             </div>
           }
         ></Route>

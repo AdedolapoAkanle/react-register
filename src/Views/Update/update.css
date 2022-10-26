@@ -1,0 +1,14 @@
+.title {
+  font-size: 25px;
+  color: #233142;
+}
+
+.btn {
+  padding: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #005792;
+  color: #fcfcfc;
+  border: none;
+  border-radius: 5px;
+}

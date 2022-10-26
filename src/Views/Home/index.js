@@ -34,9 +34,7 @@ const Home = (props) => {
         <div className="text">
           <h1 className="text1">register now!</h1>
           <span className="text2">Be a part of our community today.</span>
-          <div className="">
-            <Link to="/menu">Get Started</Link>
-          </div>
+          <div className=""></div>
         </div>
         <div action="" className="form">
           {/* <h1 className="header">Registration</h1> */}
@@ -102,9 +100,15 @@ const Home = (props) => {
             </option>
           </select>
 
-          <button className="button" onClick={clearState}>
-            submit
-          </button>
+          <div className="submit">
+            <button className="button" onClick={clearState}>
+              submit
+            </button>
+
+            <div className="link">
+              <Link to="/menu">Click</Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

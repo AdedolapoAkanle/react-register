@@ -4,15 +4,32 @@
 }
 
 .filter {
-  text-align: center;
+  /* text-align: center;*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  padding: 10px;
+  /* margin: 10px 0; */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: lightgray;
+  color: #233142;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #005792;
 }
 
 .drop {
-  padding: 10px 50px;
-  /* margin-top: 10px; */
+  padding: 10px 40px;
+  /* margin-right: 50px; */
   border-radius: 5px;
   background-color: lightgray;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   color: #233142;
   border: none;
