@@ -25,7 +25,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/update"
+          path="/update/:id"
           element={
             <div className="container">
               <Update />

@@ -3,11 +3,15 @@ import { BioDataAction } from "../../actions";
 import { api } from "../../api/api";
 import { Link } from "react-router-dom";
 import "./menu.css";
+import React from "react";
 
 const registerMenu = ({ state, dispatchBioData }) => {
   const { arr, searchType } = state;
 
-  const searchData = async (search) => {
+  // useEffect(() => {
+  //   searchData();
+  // }, []);
+  const searchData = async (search = "") => {
     const data = {
       search,
       searchType,
@@ -22,6 +26,7 @@ const registerMenu = ({ state, dispatchBioData }) => {
         id: i.id,
         name: i.name,
         age: i.age,
+        address: i.address,
         gender: i.gender,
         email: i.email,
       });
@@ -30,6 +35,17 @@ const registerMenu = ({ state, dispatchBioData }) => {
     dispatchBioData({ ...state, arr: list });
     // console.log(res);
     // dispatchBioData("");
+  };
+
+  const eraseData = async (id) => {
+    const data = {
+      id,
+    };
+    // console.log(i);
+
+    const res = await api("delete.php", data);
+    console.log(res);
+    searchData();
   };
 
   return (
@@ -73,7 +89,6 @@ const registerMenu = ({ state, dispatchBioData }) => {
               }}
             />
           </div>
-          <Link to="/update">Update</Link>
           <div className="table">
             <table>
               <thead>
@@ -82,17 +97,28 @@ const registerMenu = ({ state, dispatchBioData }) => {
                   <th>Age</th>
                   <th>Gender</th>
                   <th>Email</th>
+                  <th>Address</th>
+                  <th>Action</th>
                 </tr>
               </thead>
 
               <tbody>
-                {arr.map((usr) => (
+                {arr.map((usr, i) => (
                   <tr key={usr.id}>
-                    <td>{usr.name}</td>
+                    <td>
+                      <Link className="link" to={`/update/${usr.id}`}>
+                        {usr.name}
+                      </Link>
+                    </td>
                     <td>{usr.age}</td>
                     <td>{usr.gender}</td>
                     <td>{usr.email}</td>
-                    <button className="btn">edit</button>
+                    <td>{usr.address}</td>
+                    <td>
+                      <button className="btn" onClick={() => eraseData(usr.id)}>
+                        del
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

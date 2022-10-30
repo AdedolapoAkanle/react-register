@@ -51,6 +51,11 @@ td {
   background-color: #efecea;
 }
 
+.link {
+  text-decoration: none;
+  color: #01352c;
+}
+
 td:not(:first-child) {
   text-align: center;
 }
