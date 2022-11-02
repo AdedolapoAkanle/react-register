@@ -4,13 +4,15 @@ import { api } from "../../api/api";
 import { Link } from "react-router-dom";
 import "./menu.css";
 import React from "react";
+import { useEffect } from "react";
 
-const registerMenu = ({ state, dispatchBioData }) => {
+const RegisterMenu = ({ state, dispatchBioData }) => {
   const { arr, searchType } = state;
 
-  // useEffect(() => {
-  //   searchData();
-  // }, []);
+  useEffect(() => {
+    searchData();
+  });
+
   const searchData = async (search = "") => {
     const data = {
       search,
@@ -144,4 +146,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 // connect helps to link the app component or file to the state
 
-export default connect(mapStateToProps, mapDispatchToProps)(registerMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterMenu);
